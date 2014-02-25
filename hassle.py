@@ -49,14 +49,14 @@ def main():
 				text += '%s\n' % case
 
 			text += '\nHurry up\n'
-			header = 'From: %s\nTo: %s\nSubject: %s\n' % (gmail_user, email, 'Open Cases on Desk.com')
+			header = 'From: %s\nTo: %s\nSubject: %s\n' % (email_user, email, 'Open Cases on Desk.com')
 			text = header + text
 			try:
 				server.sendmail(email_user, email, text)
-				print text
-				print 'Sent email'
+				print(text)
+				print('Sent email')
 			except:
-				print 'failed to send'
+				print('failed to send')
 			
 def getEntries(url):
 	r = requests.get(url, auth=(user,password))
